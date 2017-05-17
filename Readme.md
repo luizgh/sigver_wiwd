@@ -35,8 +35,15 @@ This code can be used with or without GPUs. To use a GPU with Theano, follow the
 ## Downloading the models
 
 * Clone (or download) this repository
-* Download the pre-trained models from [link](https://www.etsmtl.ca/Unites-de-recherche/LIVIA/Recherche-et-innovation/Projets)
- * Save / unzip the models in the "models" folder
+* Download the pre-trained models from the [project page](https://www.etsmtl.ca/Unites-de-recherche/LIVIA/Recherche-et-innovation/Projets/Signature-Verification)
+  * Save / unzip the models in the "models" folder
+ 
+```
+git clone https://github.com/luizgh/sigver_wiwd.git
+cd sigver_wiwd/models
+wget "https://www.dropbox.com/s/118ci6i5co35p1p/signet_models.zip?dl=1" -O signet_models.zip
+unzip signet_models.zip
+``` 
 
 ## Testing 
 
@@ -75,4 +82,4 @@ We also included an interactive example, using jupyter notebook:
 jupyter notebook
 ```
 
-Look for the notebook "interactive_example.ipynb"
+Look for the notebook "interactive_example.ipynb". You can also visualize it directly [here](https://github.com/luizgh/sigver_wiwd/blob/master/interactive_example.ipynb)
