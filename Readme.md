@@ -8,7 +8,13 @@ This repository contains the code and instructions to use the trained CNN models
 
 ## Pre-requisites 
 
-The code is written in Python 2, and requires the following libraries:
+The code is written in Python 2. We recommend using the Anaconda python distribution [link](https://www.continuum.io/downloads), and create a new environment using: 
+```
+conda create -n sigver -y python=2
+source activate sigver
+```
+
+The following libraries are required
 
 * Scipy version 0.18
 * Pillow version 3.0.0
@@ -16,13 +22,8 @@ The code is written in Python 2, and requires the following libraries:
 * Theano
 * Lasagne
 
-We recommend using the Anaconda python distribution [link](https://www.continuum.io/downloads), and create a new environment using: 
-```
-conda create -n sigver -y python=2
-source activate sigver
-```
+They can be installed by running the following commands: 
 
-The following commands install the dependencies 
 ```
 conda install -y opencv "scipy=0.18.0" "pillow=3.0.0"
 conda install -y jupyter notebook matplotlib # Optional, to run the example in jupyter notebook
@@ -30,14 +31,15 @@ pip install "Theano==0.9"
 pip install https://github.com/Lasagne/Lasagne/archive/master.zip
 ```
 
-This code can be used with or without GPUs. To use a GPU with Theano, follow the instructions in this [link](http://deeplearning.net/software/theano/tutorial/using_gpu.html). Note that Theano takes time to compile the model, so it is much faster to instantiate the model once and run forward propagation for many images (instead of calling many times a script that instantiates the model and run forward propagation for a single image).
+We tested the code in Ubuntu 16.04. This code can be used with or without GPUs - to use a GPU with Theano, follow the instructions in this [link](http://deeplearning.net/software/theano/tutorial/using_gpu.html). Note that Theano takes time to compile the model, so it is much faster to instantiate the model once and run forward propagation for many images (instead of calling many times a script that instantiates the model and run forward propagation for a single image).
 
 ## Downloading the models
 
 * Clone (or download) this repository
 * Download the pre-trained models from the [project page](https://www.etsmtl.ca/Unites-de-recherche/LIVIA/Recherche-et-innovation/Projets/Signature-Verification)
   * Save / unzip the models in the "models" folder
- 
+
+Or simply run the following: 
 ```
 git clone https://github.com/luizgh/sigver_wiwd.git
 cd sigver_wiwd/models
