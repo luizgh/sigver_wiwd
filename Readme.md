@@ -79,9 +79,26 @@ feature_vector = model.get_feature_vector(processed)
 # feature_vectors = model.get_feature_vector_multiple(images)
 ```
 
-We also included an interactive example, using jupyter notebook:
+For an interactive example, use jupyter notebook:
 ```
 jupyter notebook
 ```
 
 Look for the notebook "interactive_example.ipynb". You can also visualize it directly [here](https://github.com/luizgh/sigver_wiwd/blob/master/interactive_example.ipynb)
+
+
+## Using the features in Matlab
+
+While the code requires python (with the libraries mentioned above) to extract features, it is possible to save the results in a matlab format. We included a script that process all signatures in a folder and save the results in matlab files (one .mat file for each signature). 
+
+Usage: 
+```
+python process_folder.py <signatures_path> <save_path> <model_path> [canvas_size]
+```
+
+Example:
+```
+python process_folder.py signatures/ features/ models/signet.pkl
+```
+
+This will process all signatures in the "signatures" folder, using the SigNet model, and save one .mat file in the folder "features" for each signatures. Each file contains a single variable named "feature_vector" with the features extracted from the signature.
