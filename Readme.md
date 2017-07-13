@@ -1,14 +1,22 @@
 # Learned representation for Offline Handwritten Signature Verification
 
-This repository contains the code and instructions to use the trained CNN models described in [1] to extract features for Offline Handwritten Signatures.
+This repository contains the code and instructions to use the trained CNN models described in [1] to extract features for Offline Handwritten Signatures. It also includes links to download extracted features from the GPDS, MCYT, CEDAR and Brazilian PUC-PR datasets.
 
 [1] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Learning Features for Offline Handwritten Signature Verification using Deep Convolutional Neural Networks" http://dx.doi.org/10.1016/j.patcog.2017.05.012 ([preprint](https://arxiv.org/abs/1705.05787))
+
+Topics:
+
+* [Installation](#installation): How to set-up the dependencies / download the models to extract features from new signatures
+* [Usage](#usage): How to use this code as a feature extractor for signature images
+* [Using the features in Matlab](#using-the-features-in-matlab): A script to facilitate processing multiple signatures and saving the features in matlab (.mat) format
+* [Datasets](#datasets): Download extracted features (using the proposed models) for the GPDS, MCYT, CEDAR and Brazilian PUC-PR datasets (.mat files - do not require any pre-processing code)
+
 
 # Installation
 
 ## Pre-requisites 
 
-The code is written in Python 2. We recommend using the Anaconda python distribution [link](https://www.continuum.io/downloads), and create a new environment using: 
+The code is written in Python 2. We recommend using the Anaconda python distribution ([link](https://www.continuum.io/downloads)), and create a new environment using: 
 ```
 conda create -n sigver -y python=2
 source activate sigver
@@ -43,7 +51,7 @@ Or simply run the following:
 ```
 git clone https://github.com/luizgh/sigver_wiwd.git
 cd sigver_wiwd/models
-wget "https://www.dropbox.com/s/118ci6i5co35p1p/signet_models.zip?dl=1" -O signet_models.zip
+wget "https://storage.googleapis.com/luizgh-datasets/models/signet_models.zip"
 unzip signet_models.zip
 ``` 
 
@@ -102,3 +110,51 @@ python process_folder.py signatures/ features/ models/signet.pkl
 ```
 
 This will process all signatures in the "signatures" folder, using the SigNet model, and save one .mat file in the folder "features" for each signatures. Each file contains a single variable named "feature_vector" with the features extracted from the signature.
+
+# Datasets
+
+To faciliate further research, we are also making available the features extracted for each of the four datasets used in this work (GPDS, MCYT, CEDAR, Brazilian PUC-PR), using the models SigNet and SigNet-F (with lambda=0.95).
+
+ |Dataset | SigNet | SigNet-F |
+ | --- | --- | --- |
+ | GPDS | [GPDS_signet](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet.zip) | [GPDS_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet_f.zip) |
+| MCYT | [MCYT_signet](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet.zip) | [MCYT_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet_f.zip) |
+| CEDAR | [CEDAR_signet](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet.zip) | [CEDAR_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet_f.zip) |
+| Brazilian PUC-PR\* | [brazilian_signet](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet.zip) | [brazilian_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet_f.zip) |
+
+There are two files for each user: real_X.mat and forg_X.mat. The first contains a matrix of size N x 2048, containing the feature vectors of N genuine signatures from that user. The second contains a matrix of size M x 2048, containing the feature vectors of each of the M skilled forgeries made targetting the user. 
+
+\* Note: for the brazilian PUC-PR dataset, the first 10 forgeries are "Simple forgeries", while the last 10 forgeries are "Skilled forgeries".
+
+## Loading the feature vectors in matlab
+
+```
+f = load('real_2.mat')
+% f.features: [Nx2048 single]
+```
+
+## Loading the feature vectors in python
+
+```
+from scipy.io import loadmat
+features = loadmat('real_2.mat')['features']
+# features: numpy array of shape (M, 2048)
+```
+
+# Citation
+
+If you use our code, please consider citing the following paper:
+
+[1] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Learning Features for Offline Handwritten Signature Verification using Deep Convolutional Neural Networks" http://dx.doi.org/10.1016/j.patcog.2017.05.012 ([preprint](https://arxiv.org/abs/1705.05787))
+
+If using any of the four datasets mentioned above, please cite the paper that introduced the dataset:
+
+GPDS: Vargas, J.F., M.A. Ferrer, C.M. Travieso, and J.B. Alonso. 2007. “Off-Line Handwritten Signature GPDS-960 Corpus.” In Document Analysis and Recognition, 9th I    nternational Conference on, 2:764–68. doi:10.1109/ICDAR.2007.4377018.
+
+MCYT: Ortega-Garcia, Javier, J. Fierrez-Aguilar, D. Simon, J. Gonzalez, M. Faundez-Zanuy, V. Espinosa, A. Satue, et al. 2003. “MCYT Baseline Corpus: A Bimodal Biometric Database.” IEE Proceedings-Vision, Image and Signal Processing 150 (6): 395–401.
+
+CEDAR: Kalera, Meenakshi K., Sargur Srihari, and Aihua Xu. 2004. “Offline Signature Verification and Identification Using Distance Statistics.” International Journal     of Pattern Recognition and Artificial Intelligence 18 (7): 1339–60. doi:10.1142/S0218001404003630.
+
+Brazilian PUC-PR: Freitas, C., M. Morita, L. Oliveira, E. Justino, A. Yacoubi, E. Lethelier, F. Bortolozzi, and R. Sabourin. 2000. “Bases de Dados de Cheques Bancarios Brasilei    ros.” In XXVI Conferencia Latinoamericana de Informatica.
+
+
