@@ -157,4 +157,6 @@ CEDAR: Kalera, Meenakshi K., Sargur Srihari, and Aihua Xu. 2004. “Offline Sign
 
 Brazilian PUC-PR: Freitas, C., M. Morita, L. Oliveira, E. Justino, A. Yacoubi, E. Lethelier, F. Bortolozzi, and R. Sabourin. 2000. “Bases de Dados de Cheques Bancarios Brasilei    ros.” In XXVI Conferencia Latinoamericana de Informatica.
 
+# License
 
+The source code is released under the BSD 2-clause license. Note that the trained models used the GPDS dataset for training (which is restricted for non-comercial use). 
