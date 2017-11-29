@@ -27,8 +27,8 @@ The following libraries are required
 * Scipy version 0.18
 * Pillow version 3.0.0
 * OpenCV
-* Theano
-* Lasagne
+* Theano*
+* Lasagne*
 
 They can be installed by running the following commands: 
 
@@ -40,6 +40,8 @@ pip install https://github.com/Lasagne/Lasagne/archive/master.zip
 ```
 
 We tested the code in Ubuntu 16.04. This code can be used with or without GPUs - to use a GPU with Theano, follow the instructions in this [link](http://deeplearning.net/software/theano/tutorial/using_gpu.html). Note that Theano takes time to compile the model, so it is much faster to instantiate the model once and run forward propagation for many images (instead of calling many times a script that instantiates the model and run forward propagation for a single image).
+
+\* Although we used Theano and Lasagne for training, you can also use tensorflow to extract the features. See tf_example.py for details.
 
 ## Downloading the models
 
