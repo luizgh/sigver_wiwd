@@ -86,7 +86,7 @@ def conv_bn(input, scope, num_outputs, kernel_size, weights,
 def dense_bn(input, scope, num_outputs, weights, beta, gamma, mean, inv_std):
     """ Implements a fully connected layer followed by batch normalization and
         ReLU """
-    with tf.name_scope(scope):
+    with tf.variable_scope(scope):
         w = tf.Variable(weights, name='w', dtype=tf.float32)
         dense = tf.matmul(input, w)
     bn = batch_norm(dense, scope='%s_bn' % scope,

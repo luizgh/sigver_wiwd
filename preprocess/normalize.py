@@ -127,8 +127,8 @@ def resize_image(image, new_size, interpolation='bilinear'):
 
 def crop_center(img, input_shape):
     img_shape = img.shape
-    start_y = (img_shape[0] - input_shape[0]) / 2
-    start_x = (img_shape[1] - input_shape[1]) / 2
+    start_y = (img_shape[0] - input_shape[0]) // 2
+    start_x = (img_shape[1] - input_shape[1]) // 2
     cropped = img[start_y: start_y + input_shape[0], start_x:start_x + input_shape[1]]
     return cropped
 

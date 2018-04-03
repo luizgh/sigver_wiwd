@@ -1,6 +1,7 @@
 from six.moves import cPickle
 import tensorflow as tf
 import numpy as np
+import six
 
 class TF_CNNModel:
     """ Represents a TF model (in this case, with weights trained with the Lasagne library.)
@@ -15,7 +16,10 @@ class TF_CNNModel:
             model_weights_path (str): A file containing the trained weights
         """
         with open(model_weight_path, 'rb') as f:
-            model_params = cPickle.load(f)
+            if six.PY2:
+                model_params = cPickle.load(f)
+            else:
+                model_params = cPickle.load(f, encoding='latin1')
 
         self.input_size = model_params['input_size']
         self.img_size = model_params['img_size']
@@ -43,7 +47,7 @@ class TF_CNNModel:
         out = sess.run(self.model[layer], feed_dict={self.x_input: input})
         return out
 
-    def get_feature_vector_multiple(self, images, layer='fc2'):
+    def get_feature_vector_multiple(self, sess, images, layer='fc2'):
         """ Runs forward propagation until a desired layer, for one input image
 
         Parameters:
