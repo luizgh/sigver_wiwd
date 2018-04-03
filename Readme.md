@@ -43,6 +43,8 @@ We tested the code in Ubuntu 16.04. This code can be used with or without GPUs -
 
 \* Although we used Theano and Lasagne for training, you can also use tensorflow to extract the features. See tf_example.py for details.
 
+If you receive the error message "ImportError: libhdf5.so.10: cannot open shared object file", please try installing opencv using pip: ```pip install opencv-python```
+
 ## Downloading the models
 
 * Clone (or download) this repository
