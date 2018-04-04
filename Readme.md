@@ -73,8 +73,7 @@ Run ```python example.py``` and ```python example_spp.py```. These scripts pre-p
 
 The following code (from example.py) shows how to load, pre-process a signature, and extract features using one of the learned models:
 
-.. code-block:: python
-
+```python
     from scipy.misc import imread
     from preprocess.normalize import preprocess_signature
     import signet
@@ -97,7 +96,7 @@ The following code (from example.py) shows how to load, pre-process a signature,
     
     # Multiple images can be processed in a single forward pass using:
     # feature_vectors = model.get_feature_vector_multiple(images)
-
+```
 
 Note that for the SigNet models (from [1]) the signatures used in the ```get_feature_vector``` method must always have the same size as those used for training the system (150 x 220 pixels). 
 
