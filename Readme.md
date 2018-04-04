@@ -74,28 +74,28 @@ Run ```python example.py``` and ```python example_spp.py```. These scripts pre-p
 The following code (from example.py) shows how to load, pre-process a signature, and extract features using one of the learned models:
 
 ```python
-    from scipy.misc import imread
-    from preprocess.normalize import preprocess_signature
-    import signet
-    from cnn_model import CNNModel
-    
-    # Maximum signature size (required for the SigNet models):
-    canvas_size = (952, 1360)  
-    
-    # Load and pre-process the signature
-    original = imread('data/some_signature.png', flatten=1)
-    
-    processed = preprocess_signature(original, canvas_size)
-    
-    # Load the model
-    model_weight_path = 'models/signet.pkl'
-    model = CNNModel(signet, model_weight_path)
-    
-    # Use the CNN to extract features
-    feature_vector = model.get_feature_vector(processed)
-    
-    # Multiple images can be processed in a single forward pass using:
-    # feature_vectors = model.get_feature_vector_multiple(images)
+from scipy.misc import imread
+from preprocess.normalize import preprocess_signature
+import signet
+from cnn_model import CNNModel
+
+# Maximum signature size (required for the SigNet models):
+canvas_size = (952, 1360)  
+
+# Load and pre-process the signature
+original = imread('data/some_signature.png', flatten=1)
+
+processed = preprocess_signature(original, canvas_size)
+
+# Load the model
+model_weight_path = 'models/signet.pkl'
+model = CNNModel(signet, model_weight_path)
+
+# Use the CNN to extract features
+feature_vector = model.get_feature_vector(processed)
+
+# Multiple images can be processed in a single forward pass using:
+# feature_vectors = model.get_feature_vector_multiple(images)
 ```
 
 Note that for the SigNet models (from [1]) the signatures used in the ```get_feature_vector``` method must always have the same size as those used for training the system (150 x 220 pixels). 
