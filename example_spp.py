@@ -12,6 +12,7 @@
 """
 
 from scipy.misc import imread
+from preprocess.normalize import remove_background
 import signet_spp_300dpi
 from cnn_model import CNNModel
 import numpy as np
@@ -26,7 +27,7 @@ original = imread('data/some_signature.png', flatten=1)
 # in their original size. See the paper [1] for more details.
 
 # Even if we are not padding the images, we still need to invert them (0=white, 255=black)
-processed = 255 - original
+processed = 255 - remove_background(original)
 
 # Load the model
 model_weight_path = 'models/signet_spp_300dpi.pkl'

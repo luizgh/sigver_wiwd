@@ -46,7 +46,6 @@ def normalize_image(img, size=(840, 1360)):
     # 2) Center the image
     img_r, img_c = cropped.shape
 
-    normalized_image = np.ones((max_r, max_c), dtype=np.uint8) * 255
     r_start = max_r // 2 - r_center
     c_start = max_c // 2 - c_center
 
@@ -83,6 +82,7 @@ def normalize_image(img, size=(840, 1360)):
         if c_start < 0:
             c_start = 0
 
+    normalized_image = np.ones((max_r, max_c), dtype=np.uint8) * 255
     # Add the image to the blank canvas
     normalized_image[r_start:r_start + img_r, c_start:c_start + img_c] = cropped
 
@@ -90,6 +90,24 @@ def normalize_image(img, size=(840, 1360)):
     normalized_image[normalized_image > threshold] = 255
 
     return normalized_image
+
+
+def remove_background(img):
+        """ Remove noise using OTSU's method.
+
+        :param img: The image to be processed
+        :return: The normalized image
+        """
+
+        img = img.astype(np.uint8)
+        # Binarize the image using OTSU's algorithm. This is used to find the center
+        # of mass of the image, and find the threshold to remove background noise
+        threshold, _ = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+
+        # Remove noise - anything higher than the threshold. Note that the image is still grayscale
+        img[img > threshold] = 255
+
+        return img
 
 
 def resize_image(image, new_size, interpolation='bilinear'):
