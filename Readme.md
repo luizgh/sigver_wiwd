@@ -164,7 +164,7 @@ If you use our code, please consider citing the following papers:
 
 [1] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Learning Features for Offline Handwritten Signature Verification using Deep Convolutional Neural Networks" http://dx.doi.org/10.1016/j.patcog.2017.05.012 ([preprint](https://arxiv.org/abs/1705.05787))
 
-[2] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Fixed-sized representation learning from Offline Handwritten Signatures of different sizes" ([preprint](https://arxiv.org/abs/1804.00448))
+[2] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Fixed-sized representation learning from Offline Handwritten Signatures of different sizes" https://doi.org/10.1007/s10032-018-0301-6 ([preprint](https://arxiv.org/abs/1804.00448))
 
 If using any of the four datasets mentioned above, please cite the paper that introduced the dataset:
 
