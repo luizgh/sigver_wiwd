@@ -130,16 +130,18 @@ This will process all signatures in the "signatures" folder, using the SigNet mo
 
 To faciliate further research, we are also making available the features extracted for each of the four datasets used in this work (GPDS, MCYT, CEDAR, Brazilian PUC-PR), using the models SigNet and SigNet-F (with lambda=0.95).
 
- |Dataset | SigNet | SigNet-F |
- | --- | --- | --- |
- | GPDS | [GPDS_signet](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet.zip) | [GPDS_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet_f.zip) |
-| MCYT | [MCYT_signet](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet.zip) | [MCYT_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet_f.zip) |
-| CEDAR | [CEDAR_signet](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet.zip) | [CEDAR_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet_f.zip) |
-| Brazilian PUC-PR\* | [brazilian_signet](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet.zip) | [brazilian_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet_f.zip) |
+ |Dataset | SigNet | SigNet-F | SigNet-SPP-300dpi
+ | --- | --- | --- | --- |
+ | GPDS | [GPDS_signet](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet.zip) | [GPDS_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet_f.zip) | [GPDS_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signetspp_300dpi.zip)
+| MCYT | [MCYT_signet](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet.zip) | [MCYT_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet_f.zip) | [MCYT_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signetspp_300dpi.zip)\*\*
+| CEDAR | [CEDAR_signet](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet.zip) | [CEDAR_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet_f.zip) | [CEDAR_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signetspp_300dpi.zip)\*\*
+| Brazilian PUC-PR\* | [brazilian_signet](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet.zip) | [brazilian_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet_f.zip) | [Brazilian_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signetspp_300dpi.zip)\*\*
 
 There are two files for each user: real_X.mat and forg_X.mat. The first contains a matrix of size N x 2048, containing the feature vectors of N genuine signatures from that user. The second contains a matrix of size M x 2048, containing the feature vectors of each of the M skilled forgeries made targetting the user. 
 
 \* Note: for the brazilian PUC-PR dataset, the first 10 forgeries are "Simple forgeries", while the last 10 forgeries are "Skilled forgeries".
+
+\** Note: These results are without finetuning the network to the particular datasets. We used the model trained with "SPP Fixed", and considered images in 300dpi, centered in a canvas of size defined in GPDS (428 X 612; larger images were processed in the original size). Note that this is different than the protocol used in the paper, since in the paper we were randomly splitting the datasets in 50% train(for finetuning) and 50% test.
 
 ## Loading the feature vectors in matlab
 
