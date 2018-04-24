@@ -5,7 +5,7 @@ It also includes the models described in [2] that can generate a fixed-sized fea
 
 [1] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Learning Features for Offline Handwritten Signature Verification using Deep Convolutional Neural Networks" http://dx.doi.org/10.1016/j.patcog.2017.05.012 ([preprint](https://arxiv.org/abs/1705.05787))
 
-[2] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Fixed-sized representation learning from Offline Handwritten Signatures of different sizes" ([preprint](https://arxiv.org/abs/1804.00448))
+[2] Hafemann, Luiz G., Robert Sabourin, and Luiz S. Oliveira. "Fixed-sized representation learning from Offline Handwritten Signatures of different sizes" https://doi.org/10.1007/s10032-018-0301-6 ([preprint](https://arxiv.org/abs/1804.00448))
 
 Topics:
 
@@ -128,7 +128,7 @@ This will process all signatures in the "signatures" folder, using the SigNet mo
 
 # Datasets
 
-To faciliate further research, we are also making available the features extracted for each of the four datasets used in this work (GPDS, MCYT, CEDAR, Brazilian PUC-PR), using the models SigNet and SigNet-F (with lambda=0.95).
+To faciliate further research, we are also making available the features extracted for each of the four datasets used in this work (GPDS, MCYT, CEDAR, Brazilian PUC-PR), using the models SigNet, SigNet-F (with lambda=0.95) and SigNet-SPP-300dpi.
 
  |Dataset | SigNet | SigNet-F | SigNet-SPP-300dpi
  | --- | --- | --- | --- |
