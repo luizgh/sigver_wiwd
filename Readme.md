@@ -128,7 +128,7 @@ This will process all signatures in the "signatures" folder, using the SigNet mo
 
 # Datasets
 
-To faciliate further research, we are also making available the features extracted for each of the four datasets used in this work (GPDS, MCYT, CEDAR, Brazilian PUC-PR), using the models SigNet, SigNet-F (with lambda=0.95) and SigNet-SPP-300dpi.
+To facilitate further research, we are also making available the features extracted for each of the four datasets used in this work (GPDS, MCYT, CEDAR, Brazilian PUC-PR), using the models SigNet, SigNet-F (with lambda=0.95) and SigNet-SPP-300dpi.
 
  |Dataset | SigNet | SigNet-F | SigNet-SPP-300dpi
  | --- | --- | --- | --- |
