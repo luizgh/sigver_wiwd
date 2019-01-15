@@ -1,5 +1,7 @@
 # Learned representation for Offline Handwritten Signature Verification
 
+*NEW*: Code for training the models (using Pytorch) is now available in a new repository: https://github.com/luizgh/sigver
+
 This repository contains the code and instructions to use the trained CNN models described in [1] to extract features for Offline Handwritten Signatures. 
 It also includes the models described in [2] that can generate a fixed-sized feature vector for signatures of different sizes. 
 
