@@ -57,15 +57,6 @@ We tested the code in Ubuntu 16.04. This code can be used with or without GPUs -
 * Download the pre-trained models from the [project page](https://www.etsmtl.ca/Unites-de-recherche/LIVIA/Recherche-et-innovation/Projets/Signature-Verification)
   * Save / unzip the models in the "models" folder
 
-Or simply run the following to download both the SigNet models(from [1]) and SigNet-SPP models (from [2]): 
-```
-git clone https://github.com/luizgh/sigver_wiwd.git
-cd sigver_wiwd/models
-wget "https://storage.googleapis.com/luizgh-datasets/models/signet_models.zip"
-wget "https://storage.googleapis.com/luizgh-datasets/models/signet_spp_models.zip"
-unzip signet_models.zip
-unzip signet_spp_models.zip
-``` 
 
 ## Testing 
 
@@ -134,10 +125,10 @@ To facilitate further research, we are also making available the features extrac
 
  |Dataset | SigNet | SigNet-F | SigNet-SPP-300dpi
  | --- | --- | --- | --- |
- | GPDS | [GPDS_signet](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet.zip) | [GPDS_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signet_f.zip) | [GPDS_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/gpds_signetspp_300dpi.zip)
-| MCYT | [MCYT_signet](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet.zip) | [MCYT_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signet_f.zip) | [MCYT_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/mcyt_signetspp_300dpi.zip)\*\*
-| CEDAR | [CEDAR_signet](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet.zip) | [CEDAR_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signet_f.zip) | [CEDAR_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/cedar_signetspp_300dpi.zip)\*\*
-| Brazilian PUC-PR\* | [brazilian_signet](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet.zip) | [brazilian_signet_f](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signet_f.zip) | [Brazilian_signetspp_300dpi](https://storage.googleapis.com/luizgh-datasets/datasets/brazilian_signetspp_300dpi.zip)\*\*
+ | GPDS | [GPDS_signet](https://drive.google.com/open?id=163sTIIvcF8hKjlWJ4GFgU-V86p9iygx-) | [GPDS_signet_f](https://drive.google.com/open?id=1x-OnstvAMP7rw01T7Z_C7XP_i7l0TPVx) | [GPDS_signetspp_300dpi](https://drive.google.com/open?id=1Q5y4uHKzpDTuJ2SrpiSimKMGOTY7CWi7)
+| MCYT | [MCYT_signet](https://drive.google.com/open?id=1WXsPPYeWTV8Y2NDZfiBWhBW_Z6CgceAF) | [MCYT_signet_f](https://drive.google.com/open?id=17BtvIbOWRk4C8xzWpBcn_K16y4FF_UEI) | [MCYT_signetspp_300dpi](https://drive.google.com/open?id=1hFnzhvL1nNZFrlCXqVScR8qLF0vngNJ-)\*\*
+| CEDAR | [CEDAR_signet](https://drive.google.com/open?id=1m8ALlf85bhCUDAH-qiLyjsJeMCuVkCJT) | [CEDAR_signet_f](https://drive.google.com/open?id=1bVnnBQPBaKkJHeXG-5idp-LV7jXSfbZY) | [CEDAR_signetspp_300dpi](https://drive.google.com/open?id=1Fw3g-gKm_c0Sq3X4KyPrQCa7Bz6gbmhK)\*\*
+| Brazilian PUC-PR\* | [brazilian_signet](https://drive.google.com/open?id=11F7bygcDrTzTjLuJhBGaef1yKpqohHRp) | [brazilian_signet_f](https://drive.google.com/open?id=1sNBVk77ipBUePbC72kuS9dsrEP3zhT7e) | [Brazilian_signetspp_300dpi](https://drive.google.com/open?id=1IJZ6ZvGLqT-luboHr7CK3F2RqLb_Mxo7)\*\*
 
 There are two files for each user: real_X.mat and forg_X.mat. The first contains a matrix of size N x 2048, containing the feature vectors of N genuine signatures from that user. The second contains a matrix of size M x 2048, containing the feature vectors of each of the M skilled forgeries made targetting the user. 
 
