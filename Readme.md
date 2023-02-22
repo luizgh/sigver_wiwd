@@ -54,8 +54,12 @@ We tested the code in Ubuntu 16.04. This code can be used with or without GPUs -
 ## Downloading the models
 
 * Clone (or download) this repository
-* Download the pre-trained models from the [project page](https://www.etsmtl.ca/Unites-de-recherche/LIVIA/Recherche-et-innovation/Projets/Signature-Verification)
+* Download the pre-trained models from the links below:
   * Save / unzip the models in the "models" folder
+
+Signet: https://drive.google.com/file/d/1KffsnZu8-33wXklsodofw-a-KX6tAsVN/view?usp=share_link
+
+Signet SPP-models: https://drive.google.com/file/d/1KffsnZu8-33wXklsodofw-a-KX6tAsVN/view?usp=share_link
 
 
 ## Testing 
